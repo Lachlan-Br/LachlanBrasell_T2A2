@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
+  Before_action :authenticate_user! , only: [ :new, :create, edit:, :update, :destroy]
+  Before_action :is_seller, only: [ :new, :create]
+  Before_action :check_ownership, only: [ :update, :destroy, :edit]
 
   # GET /items or /items.json
   def index
@@ -12,7 +15,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.create(item_params)
   end
 
   # GET /items/1/edit
@@ -53,12 +56,26 @@ class ItemsController < ApplicationController
     end
   end
 
+  #this is to make sure only sellers can create items and not everyone.
+  def isSeller
+    if !current_user.seller?
+      redirect_to items_url, alert: "You must opt in to be a seller in order to make new listings."
+    end
+  end
+
+  def check_ownership
+    if !current_user.admin? and current_user.id!=@items.user_id 
+      redirect_to items_url, alert: "You must be the sller or and Admin to do this."
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
     end
 
+    #edited for user ID to show uploaded items.
     # Only allow a list of trusted parameters through.
     def item_params
       params.require(:item).permit(:name, :DOC, :version, :price, :available, :user_id)
