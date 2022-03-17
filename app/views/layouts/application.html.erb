@@ -10,6 +10,15 @@
   </head>
 
   <body>
+  //Alert system for success / danger notification 
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <%if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  //renders the input within _shared.html.erb for navbar styling
+    <%= render 'shared/navbar' %> 
     <%= yield %>
   </body>
 </html>

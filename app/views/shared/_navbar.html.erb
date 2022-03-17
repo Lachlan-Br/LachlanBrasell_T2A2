@@ -22,6 +22,11 @@
         <li class="nav-item">
          <%= link_to "Sign out", destroy_user_session_path, method: 'delete', class: "nav-link active" %>
         </li>
+        <% if current_user.nameofseller? %>
+          <li class="nav-item">
+          <%= link_to 'New Item', new_item_path, class: "nav-link active" %>
+          </li>
+        <% end %>
       <% end %>
 
       // User page classification - IF NOT WORKING EDIT OUT
@@ -29,6 +34,8 @@
       <%= current_user.name %>
          <%= link_to "User", user_path(current_user), class: "nav-link active" %>
       </li>
+
+      
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

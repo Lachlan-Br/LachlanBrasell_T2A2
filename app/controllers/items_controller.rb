@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
   end
-
+#all json deleted not needed for HTML coding.
   # POST /items or /items.json
   def create
     @item = Item.new(item_params)
@@ -26,10 +26,8 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
-        format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +37,8 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to item_url(@item), notice: "Item was successfully updated." }
-        format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
