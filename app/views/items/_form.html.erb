@@ -41,4 +41,14 @@
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id%>
+  Application: <br>
+  <%= form.fields_for :application do |app_form| %>
+    <%= app_form.label :creator %>
+    <%= app_form.text_field :creator %>
+    <%= app_form.label :techstack %>
+    <%= app_form.text_field :techstack %>
+    <%= app_form.label :description %>
+    <%= app_form.text_field :description %>
+    <%= app_form.label :specifications %>
+    <%= app_form.text_field :specifications %>
 <% end %>

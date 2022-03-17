@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.create(item_params)
+    @gig.address = Application.new
   end
 
   # GET /items/1/edit
@@ -78,6 +79,6 @@ class ItemsController < ApplicationController
     #edited for user ID to show uploaded items.
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :DOC, :version, :price, :available, :user_id)
+      params.require(:item).permit(:name, :DOC, :version, :price, :available, :user_id, applications_attributes: [ :creator, :techstack, :description, :specifications])
     end
 end
