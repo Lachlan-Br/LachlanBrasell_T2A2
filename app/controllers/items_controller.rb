@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
 
   def check_ownership
     if !current_user.admin? and current_user.id!=@items.user_id 
-      redirect_to items_url, alert: "You must be the sller or and Admin to do this."
+      redirect_to items_url, alert: "You must be the seller or and Admin to do this."
     end
   end
 
