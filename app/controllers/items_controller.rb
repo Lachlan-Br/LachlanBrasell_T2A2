@@ -13,10 +13,10 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # GET /items/new
+  # GET /items/new - updated for address and application
   def new
     @item = Item.create(item_params)
-    @gig.address = Application.new
+    @item.application = Application.new
   end
 
   # GET /items/1/edit
