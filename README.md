@@ -48,7 +48,8 @@ detailing of selling piece - custom UI for ease of access - admin acc function -
 / Options for purchases - comments and reviews - search bar for items - seller item lists and contact via email system.
 
 Sitemap:
-*************** PICTURE HERE
+
+![Sitemap](../pics/Sitemap-Final.JPG)
 
 Target audience:
 
@@ -79,15 +80,39 @@ Rails / Ruby on rails: Ruby on Rails is an open-source software used to build we
 HTML: Hypertext Markup Language (HTML) is a language that uses markup codes. 
 The HTML document is a plain text file with embedded markup codes. The markup codes are typed into a document and control the formatting 
 and layout of your finished document. (attr https://library.salve.edu/tutorials/javascript/ch1_1.html)
+
 ## User stories for your app
 
-Trello picture **************
+User stories: Note * = optionals.
+As a guest i can see all listed items
+As a guest i can see the focus view of all listed items
+As a guest i can see the comments of users on listed items*
+As a guest i can sign up
+As a user i can sign in
+As a user i can sign out
+As a user i can access everything a guest can (do all the same.)
+As a user i can opt for seller
+As a user i can buy items listed
+As a user i can comment / review on items*
+As a user i can view my account
+As a seller i can add new items
+As a seller i can manage my own items
+As a seller i can upload multiple photos per item*
+As a seller i can view my all my listed items*
+
+
 ## Wireframes for your app
 
-Picture upload *****************
+![wireframe](../pics/itemfocuspage.JPG)
+![wireframe2](../pics/applicationslist.JPG)
+
+All wireframe can be views in the pics file.
+
+
 ## An ERD for your app
 
-Picture upload ****************
+![ERDfinal](../pics/ERD-final.JPG)
+
 ## Explain the different high-level components (abstractions) in your app
 
 Within the application there are a multitude of controllers which interact with the User and or storage of
@@ -133,5 +158,6 @@ Within the structure this database relies upon Users and Sellers, the two larges
   Each application hold a large amount of data which links itself to items within the seller opt.
 
 ## Describe the way tasks are allocated and tracked in your project
+The project was tracked and used within the Trello system for ease of updating and editting current pieces of work and blockages effecting said work.
 
-Trello picture *****************
+![trello](../pics/Q20%20-Trello.JPG)
